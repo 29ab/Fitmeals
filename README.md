@@ -12,8 +12,8 @@ Fitmeals is a delivery service which gives you a healthy meal in your city. Peop
 
 
 <p>TechStack</p>
--HTML & CSS
--Advance Javascript
--DOM manipulation
--LocalStorage
--JSON fundamentals
+- HTML & CSS
+- Advance Javascript
+- DOM manipulation
+- LocalStorage
+- JSON fundamentals
