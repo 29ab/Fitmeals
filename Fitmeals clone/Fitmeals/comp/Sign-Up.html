@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign-up.css">
+</head>
+<body>
+
+    <div>
+        <div>
+            <div id="nav">
+            <div id="nav_Bar">
+                <img src="https://cdn-icons-png.flaticon.com/128/927/927667.png">
+                <p>Fit delivery only in Hyderabad</p>
+                <img src="https://cdn-icons.flaticon.com/png/128/3059/premium/3059502.png?token=exp=1636271875~hmac=b1c534292bf4c3eba590cdfc62ee72e2">
+                <p>9100347480</p>
+                <img src="https://t4.ftcdn.net/jpg/00/98/26/11/240_F_98261159_Po5JS7ds82XaePJIsG1MiEtHRzOeUPNj.jpg">
+                <p>fitmealsindia@gmail.com</p>
+            </div>
+            <div id="nav_Bar2">
+                <img src="https://cdn-icons-png.flaticon.com/128/622/622669.png">
+                <img src="https://cdn-icons-png.flaticon.com/128/709/709722.png"> 
+                <img src = "https://cdn-icons.flaticon.com/png/128/2832/premium/2832517.png?token=exp=1636271982~hmac=a55fcc371ec73fc9b08c85757740b649">
+            </div>
+            <button>Signup</button>
+        </div>
+        <hr/>
+        <div id="nav2">
+            <div> 
+                <img src="https://www.fitmeals.co.in/wp-content/uploads/2019/06/logo-black.png">
+            </div>
+            <div id="but">
+                <p>Home</p>
+                <div class="dropdown">
+                    <p>Meal Plans</p>
+                    <div class="dropdown-content">
+                        <a  >Weightloss Meal and plan</a>
+                        <a href="#" >Mentainaence Meal Plan</a>
+                        <a href="#" >Athelatic Meal Plan</a>
+                        <a href="#" >Keto Meal Plan</a>
+                        <a href="#" >Transformation Challange</a>
+                    </div>
+                </div>
+                <p>Health Coaching</p>
+                <div class="dropdown">
+                    <p>Products</p>
+                    <div class="dropdown-content">
+                        <a href="#" >Vegan Sweet</a>
+                        <a href="#" >Low-cal Sauces</a>
+                        <a href="#" >Nuts Butters</a>
+                        <a href="#" >Fresh Bakes</a>
+                    </div>
+                   
+                </div>
+                <p>Blog</p>
+                <div class="dropdown">
+                    <p>About Us</p>
+                    <div class="dropdown-content">
+                        <a href="#" >Our Stories</a>
+                        <a href="#" >FAQ</a>
+                        <a href="#" >Testimonials</a>
+                    </div>
+                </div>
+                
+            </div>
+            <button>Call: 9100347480</button>
+        </div>
+        <hr/>
+    </div>
+    <h1 style="text-align: center;">Signup</h1>
+
+    <div>
+        <div id="signup">
+            <input id = "email" type="email" placeholder="Email"><br/><br/>
+            <input id="pass" type="password" placeholder="password"><br/><br/>
+            <input id="user" type="text" placeholder="user Name"><br/><br/>
+            <input id="mobile" type="number" placeholder="Number"><br/><br/>
+            <button>Submit</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("button").addEventListener("click",signup);
+    var userArr = JSON.parse(localStorage.getItem("userData")) || [];
+
+    function signup() {
+        var email = document.getElementById("email").value;
+        var pass = document.getElementById("pass").value;
+        var user = document.getElementById("user").value;
+        var mobile = document.getElementById("mobile").value;
+       
+        var userCredential = {
+            emailAddress: email,
+            password: pass,
+            userName: user,
+            mobileNo: mobile,
+        };
+        userArr.push(userCredential);
+        localStorage.setItem("userData",JSON.stringify(userArr));
+        window.location.href = "Sign-In.html";
+    }
+</script>

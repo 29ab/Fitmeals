@@ -1,0 +1,35 @@
+#checks{
+    width: 700px;
+    border: 1px solid lime;
+    background-color: #8ec038;
+    margin: auto;
+    text-align: center;
+    padding:100px 0;
+}
+#OTP_sub{
+    width: 180px;
+    height: 23px;
+}
+#final{
+    width: 100px;
+    height: 30px;
+    font-weight: bolder;
+    border-radius: 50px;
+    background-color: #E53935;
+    border: 1px solid #E53935;
+    color: white;
+    margin-left: -20px;
+}
+
+#form_inp > input{
+    width: 180px;
+    height: 23px;
+}
+#sub{
+    font-weight: bolder;
+    border-radius: 50px;
+    background-color: #E53935;
+    border: 1px solid #E53935;
+    color: white;
+    margin-left: -20px;
+}

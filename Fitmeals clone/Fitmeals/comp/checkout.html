@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="checkout.css">
+    
+    <style>
+        #form_inp > input{
+            margin-bottom: 20px;
+        }
+        
+        #ccod{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="checks">
+            <h1>Checkout Page</h1>
+            <h2></h2>
+            <!-- <button>Submit</button> -->
+            <div id="mid"></div>
+            <form id="form_inp">
+                <label>CVV&nbsp; &nbsp;</label>
+                <input type="number" name="Enter your cvv" id="cvv"><br/>
+                <label>Name&nbsp;&nbsp;</label>
+                <input type="text" name="Enter your name" id="name"><br/>
+                <label>Month&nbsp;</label>
+                <input type="number" name="Expiry date" id="Exp_date">
+                <label> &nbsp; &nbsp;Year &nbsp;</label>
+                <input type="number" name="Expiry year" id="Exp_month">
+                <input type="submit" name="Submit" id="sub" style="width:100px; height: 30px;">
+            </form>
+            <label>OTP&nbsp;&nbsp;&nbsp;</label>
+            <input id="OTP_sub" type="number" placeholder="OTP">
+            <button id="final">Submit</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var total = JSON.parse(localStorage.getItem("balance"))
+    // console.log(total)
+   var show = document.querySelector("#checks > h2");
+   show.textContent ="Total:-" + total;
+   
+    
+    document.getElementById("sub").addEventListener("click",check);
+        function check(p) {
+            p.preventDefault();
+            var cv = document.querySelector("#cvv").value;
+        var Name = document.querySelector("#name").value;
+        var Month = document.querySelector("#Exp_date").value;
+        var Year = document.querySelector("#Exp_month").value;
+
+        console.log("here")
+
+        if(Name == "Abhishek" && Month == 12 && Year == 22 && cv == 789){
+            console.log(Name,Month,Year,cv);
+            var otp = 1234;
+            localStorage.setItem("OTP",JSON.stringify(otp));
+            alert("OTP is : 1234");
+            // window.location.href = "pament.html";
+        }
+        else{
+            alert("Wrong Credential")
+        }
+        
+    }
+        
+    var OTP = JSON.parse(localStorage.getItem("OTP"));
+
+    document.getElementById("final").addEventListener("click",function(){
+
+        var val = document.querySelector("#OTP_sub").value;
+
+        if(val == OTP){
+            alert("Payment Successfull");
+
+        }
+        else {
+            alert("Wrong OTP")
+        }
+    });
+    
+</script>
